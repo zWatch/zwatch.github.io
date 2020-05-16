@@ -5,17 +5,17 @@
   
 
   
-  <title>Hexo</title>
+  <title>Z的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Z的个人博客">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en">
+<meta property="og:site_name" content="Z的个人博客">
+<meta property="og:locale" content="zh">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Z的个人博客">
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="Z的个人博客" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -34,7 +34,7 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
+        <a href="/" id="logo">Z的个人博客</a>
       </h1>
       
     </div>
@@ -62,9 +62,388 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-zhihuishu-shuake" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-OpenGL/缓存数据" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/10/09/zhihuishu-shuake/" class="article-date">
+    <a href="/2020/05/05/OpenGL/缓存数据/" class="article-date">
+  <time datetime="2020-05-05T09:58:52.000Z" itemprop="datePublished">2020-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/OpenGL/">OpenGL</a>►<a class="article-category-link" href="/categories/OpenGL/缓存（buffer）/">缓存（buffer）</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/05/OpenGL/缓存数据/">OpenGL缓存数据</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="创建缓冲对象"><a href="#创建缓冲对象" class="headerlink" title="创建缓冲对象"></a>创建缓冲对象</h1><p>glCreateBuffer(int n, uint* ps);<br>glGenBuffer(int n, uint* ps);</p>
+<h1 id="分配存储空间"><a href="#分配存储空间" class="headerlink" title="分配存储空间"></a>分配存储空间</h1><p>glNamedBufferStorage(uint buffer, sizeiptr size, cvoid* data, bitfield flag)<br><code>buffer</code>:<br><code>size</code>:单位byte<br><code>data</code>:指向数据<br><code>flag</code>:<br>  <code>GL_DYNAMIC_STORAGE_BIT</code>:设置该函数后可以通过<code>glNamedBufferSubData()</code>更新数据;<br>  <code>GL_MAP_READ_BIT</code>:设置后可以通过<code>glMapNamedbufferRange()</code>映射到CPU进行读取<br>  <code>GL_MAP_WRITE_BIT</code>:设置后可以通过<code>glMapNamedbufferRange()</code>映射到CPU进行写<br>  <code>GL_MAP_PERSISTENT_BIT</code>:永久映射<br>  <code>GL_MAP_COHERENT_BIT</code>:数据将会在CPU和GPU段保持一致<br>  <code>GL_CLIENT_STORAGE_BIT</code>:对于不一致的内存构架来说可能在CPU端访问更有效率，设置该值来引导OpenGL选则CPU端读取来提高效率  </p>
+<h1 id="绑定缓存对象"><a href="#绑定缓存对象" class="headerlink" title="绑定缓存对象"></a>绑定缓存对象</h1><p>glBindBuffer(enum target, uint buffer)<br><code>target</code>:<br>  <code>GL_</code></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/05/OpenGL/缓存数据/" data-id="cka9nyx6200091stzqvkim5tm" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenGL/">OpenGL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-OpenGL/图元" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/05/OpenGL/图元/" class="article-date">
+  <time datetime="2020-05-05T09:58:52.000Z" itemprop="datePublished">2020-05-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/OpenGL/">OpenGL</a>►<a class="article-category-link" href="/categories/OpenGL/图元/">图元</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/05/OpenGL/图元/">OpenGL图元</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="图元"><a href="#图元" class="headerlink" title="图元"></a>图元</h1><p>基本图元有点，线，三角形。还有Patch类型（-&gt;细分着色器），以及邻接图元（adjacency primitive）(-&gt;几何着色器)</p>
+<h1 id="点"><a href="#点" class="headerlink" title="点"></a>点</h1><p>需要开启GL_PROGRAM_POINT_SIZE后才能在着色器中写入gl_PointSize,否则可使用glPointSize(float)设置点大小<br>每个点上都会运行片元着色器，其中会有gl_PointCoord</p>
+<h1 id="线"><a href="#线" class="headerlink" title="线"></a>线</h1><p>line loop指首尾循环的，line strip指首位开口的<br>同样glLineWidth(float)设置线段大的宽度</p>
+<h1 id="三角形"><a href="#三角形" class="headerlink" title="三角形"></a>三角形</h1><p>三角/条带（triangle strip）/扇面(triangle fan)，  </p>
+<h1 id="关键字"><a href="#关键字" class="headerlink" title="关键字"></a>关键字</h1><p>GL_POINTS<br>GL_LINE<br>GL_LINE_LOOP<br>GL_LINE_STRIP<br>GL_TRIANGLE<br>GL_TRIANGLE_STRIP<br>GL_TRIANGLE_FAN</p>
+<h1 id="将多边形渲染为点集，轮廓线，实体"><a href="#将多边形渲染为点集，轮廓线，实体" class="headerlink" title="将多边形渲染为点集，轮廓线，实体"></a>将多边形渲染为点集，轮廓线，实体</h1><p>glPolygonMode(enum face, enum mode)<br><code>face</code>:<br>  <code>GL_FRONT_AND_BACK</code><br><code>mode</code>:<br>  <code>GL_POINT</code><br>  <code>GL_LINE</code><br>  <code>GL_FILL</code></p>
+<h1 id="背面剔除"><a href="#背面剔除" class="headerlink" title="背面剔除"></a>背面剔除</h1><p>  <code>glCullFace(enum mode)</code><br><code>mode</code>:<br>  <code>GL_FRONT</code>:<br>  <code>GL_BACK</code>:<br>  <code>GL_FRONT_AND_BACK</code>:<br>需要开启,GL_CULL_FACE</p>
+<h1 id="面的反转和裁剪"><a href="#面的反转和裁剪" class="headerlink" title="面的反转和裁剪"></a>面的反转和裁剪</h1><p>  <code>glFrontFace(enum mode)</code><br><code>mode</code>:<br>  <code>GL_CCW</code>:逆时针为正面<br>  <code>GL_CW</code> ：顺时针为正面  </p>
+<h1 id="关键字-1"><a href="#关键字-1" class="headerlink" title="关键字"></a>关键字</h1><p>  有向流形（oriantable）</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/05/OpenGL/图元/" data-id="cka9nyx6g000g1stz9wxb1dag" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/OpenGL/">OpenGL</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Code/C++/C20/新标准" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/05/04/Code/C++/C20/新标准/" class="article-date">
+  <time datetime="2020-05-04T00:22:34.000Z" itemprop="datePublished">2020-05-04</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C++</a>►<a class="article-category-link" href="/categories/C/CXX20/">CXX20</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/04/Code/C++/C20/新标准/">C20</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>2020-03-15译自<a href="https://github.com/cplusplus/draft/tree/c++20/source/preface.tex。" target="_blank" rel="noopener">https://github.com/cplusplus/draft/tree/c++20/source/preface.tex。</a></p>
+<p>2020-03-25更新。</p>
+<p>在C++20标准发布后，英文终稿大概会在ISO网站上公开。</p>
+<p>新增概念（concepts）、requires子句（requires-clause）、requires表达式（requires-expression）和<concepts>头文件<br>新增协程（coroutines），包括co_yield、co_await、co_return关键字和<coroutines>头文件<br>新增模块（modules）、导入声明（import-declaration）、导出声明（export-declaration）<br>新增三向比较（three-way comparison）、默认比较（defaulted comparisons）、比较表达式自动重写、<compare>头文件<br>新增指派初始化器（designated initializers）<br>支持类类型（class types）和浮点类型（floating-point types）作为非类型模板形参（non-type template parameter）的类型<br>新的属性（attributes）[[no_unique_address]]、[[likely]]和[[unlikely]]<br>支持在[[nodiscard]]中可选地使用字符串<br>支持用<code>constinit</code>关键字要求常量初始化（constant initialization）<br>支持用<code>consteval</code>关键字要求常量求值（constant evaluation）<br>扩展常量求值支持，包括<br>内存分配及解分配<br>虚函数调用<br><code>dynamic_cast</code>和<code>typeid</code><br>切换<code>union</code>的活跃成员<br>未初始化的变量<br>支持<code>constexpr</code>函数中包含catch异常处理和内联汇编（asm-declaration），只要它们不在常量求值中执行<br>支持在类特定<code>operator delete</code>函数中控制析构过程<br>新增<code>using enum</code>声明<br>新增<code>char8_t</code>类型<br>保证<code>char16_t</code>和<code>char32_t</code>字面量分别是<code>UTF-16</code>和<code>UTF-32</code>编码<br>支持<code>range-based for</code>中的初始化语句<br>支持位域（<code>bit-fields</code>）的默认初始化器（default member initializers）<br>支持用括号的聚合类型初始化（aggregate initialization）<br>扩展<code>lambda</code>表达式支持，包括<br>generic lambda的显式模板头部（template-head）<br>无状态闭包类型的默认构造和赋值<br>在不求值表达式（unevaluated operands）中使用lambda表达式<br>初始化捕获（init-capture）作为包展开（pack expansion）<br><del>支持new表达式（new-expression）中的数组长度推断</del>（←_←这条因为作用于所有C++版本，所以不算更新了）<br>扩展结构化绑定（<code>structured binding</code>）支持<br>支持inline命名空间出现在嵌套命名空间定义（nested namespace definitions）中<br>支持条件性<code>explicit（conditionally-explicit）</code>成员函数<br>扩展类模板参数推导<code>（class template argument deduction）</code>支持，以包含聚合类型初始化和别名模板<br>减少需要<code>typename</code>的场合<br>支持利用参数依赖查找（argument-dependent name lookup）调用未声明的带模板实参的模板名（template-id）<br>放宽模板特化声明（template specialization declarations）中的访问权限检查（access checking）规则<br>修订内存模型<code>（memory model）</code><br>扩展允许<code>return</code>和<code>throw</code>中的变量被隐式移动<code>（implicitly moved）</code>的情况<br>扩展变参宏<code>（variadic macros）</code>支持，利用<code>__VA_OPT__</code><br>功能特性测试宏（feature test macros）和<code>&lt;version&gt;</code>头文件<br>限制标准库函数和函数模板的有效用法<br>新增范围<code>（ranges）</code>和<code>&lt;ranges&gt;</code>头文件<br>新增日历<code>（calendar）</code>和时区<code>（time zone）</code>支持<br>新增文本格式化库<code>（text formatting library）</code>和<code>&lt;format&gt;</code>头文件<br>新增线程同步设施<code>（synchronization facilities）</code>用于等待（waiting）、唤醒（notifications）、信号量（semaphores）、闭锁（latches）、栅栏（barriers），和<code>&lt;barrier&gt;、&lt;latch&gt;、&lt;semaphore&gt;</code>头文件<br>新增数学常量库（mathematical constants library）和<numbers>头文件<br>支持表示源码信息（source locations）和<source_location>头文件<br>新增span视图（view）和<span>头文件<br>新增自动合并的线程类（joining thread class）和<stop_token>头文件<br>扩展原子类型和操作（atomic types and operations），包括<br>新的类模板atomic_ref<br>新的原子浮点类型<br>新的原子智能指针类型<br>支持有填充位（paddings）的类型的比较并交换操作（compare-and-exchange operations）<br>memory_order转换为有作用域枚举（scoped enumeration）<br>新增unsequenced执行策略（execution policy）<br>新的标准库工具函数、类型、模板，包括<br>类型特征（type traits）is_bounded_array、is_corresponding_member、is_layout_compatible、is_nothrow_convertible、is_pointer_interconvertible_base_of、is_pointer_interconvertible_with_class和is_unbounded_array<br>变换特征（transformation traits）remove_cvref、type_identity、unwrap_ref_decay、unwrap_reference<br>函数assume_aligned和is_constant_evaluated<br>用于容器的非成员函数erase和erase_if<br>用于使用分配器构造（uses-allocator construction）的工具<br>函数模板to_address<br>函数模板bind_front<br>函数模板to_array<br>make_shared数组支持<br>支持在分配shared_ptr和unique_ptr管理的对象时使用默认初始化（default initialization）<br>新增位操作库（bit manipulation library）和<bit>头文件<br>新增同步缓冲区输出流（synchronized buffered output stream）和<syncstream>头文件<br>新增shift算法<br>新增midpoint和lerp数学函数<br>标准库使用[[nodiscard]]属性<br>支持无序容器（unordered containers）的异构查找（heterogeneous lookup）<br>支持关联容器（associative containers）的元素存在性检测（element existence detection）<br>改变list和forward_list的remove、remove_if、unique成员函数以返回被删除的元素的数量<br>新增string和string_view的starts_with和ends_with成员函数<br>支持在<numeric>算法中利用移动语义（move semantics）<br>支持高效地访问basic_stringbuf的缓冲区<br>扩展标准库的常量表达式求值支持，包括更多的算法、工具和类型，如pair、tuple、vector、string<br>删除已弃用的特性</numeric></syncstream></bit></stop_token></span></source_location></numbers></compare></coroutines></concepts></p>
+<p>ref <a href="https://zhuanlan.zhihu.com/p/113138348" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/113138348</a><br>auther d41d8c</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/05/04/Code/C++/C20/新标准/" data-id="cka9nyx78001n1stz6dxubyca" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Code/entt使用" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/11/23/Code/entt使用/" class="article-date">
+  <time datetime="2019-11-23T12:25:34.000Z" itemprop="datePublished">2019-11-23</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/C/">C++</a>►<a class="article-category-link" href="/categories/C/Third/">Third</a>►<a class="article-category-link" href="/categories/C/Third/entt/">entt</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/11/23/Code/entt使用/">entt使用</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id><a href="#" class="headerlink" title="?????"></a>?????</h1><h2 id="-1"><a href="#-1" class="headerlink" title="??"></a>??</h2><p>radix_sort&lt;base, store&gt;<br>insertion_sort<br>std_sort</p>
+<h2 id="family"><a href="#family" class="headerlink" title="family"></a>family</h2><p>  using a_family = entt::family<struct a_family_type>;<br>  auto t1 = a_family::type<int>;//t1 is unsigned int<br>  ??????????t1???????????</int></struct></p>
+<h2 id="hashed-string-to-uint32"><a href="#hashed-string-to-uint32" class="headerlink" title="hashed_string to uint32"></a>hashed_string to uint32</h2><p>  ?string???uint32<br>  entt::hashed_string::to_value(foobar)==0xbf9cf968</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/11/23/Code/entt使用/" data-id="cka9nyx5w00061stzkuitqrl1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Tool/下载学堂在线课程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/17/Tool/下载学堂在线课程/" class="article-date">
+  <time datetime="2019-10-17T01:35:43.000Z" itemprop="datePublished">2019-10-17</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/让生活变得更美好/">让生活变得更美好</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/17/Tool/下载学堂在线课程/">下载学堂在线课程</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>[url:<a href="https://next.xuetangx.com/learn/UCBERKELEYX08091000166/UCBERKELEYX08091000166/1002016/video/499367]" target="_blank" rel="noopener">https://next.xuetangx.com/learn/UCBERKELEYX08091000166/UCBERKELEYX08091000166/1002016/video/499367]</a></p>
+<h1 id="视频地址"><a href="#视频地址" class="headerlink" title="视频地址"></a>视频地址</h1><p>p=<a href="https://next.xuetangx.com/learn/**/(time)/(type)/()" target="_blank" rel="noopener">https://next.xuetangx.com/learn/**/(time)/(type)/()</a><br>字幕=”<a href="https://next.xuetangx.com/api/v1/lms/service/subtitle_parse/?c_d=FE72F5E8905B58BA9C33DC5901307461&amp;lg=0&quot;" target="_blank" rel="noopener">https://next.xuetangx.com/api/v1/lms/service/subtitle_parse/?c_d=FE72F5E8905B58BA9C33DC5901307461&amp;lg=0&quot;</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">data-src</span>=<span class="string">"https://next.xuetangx.com/api/v1/lms/service/subtitle_parse/?c_d=FE72F5E8905B58BA9C33DC5901307461&amp;amp;lg=0"</span> <span class="attr">class</span>=<span class="string">"xt_video_caption_btn xt_video_player_common_active"</span> <span class="attr">keyt</span>=<span class="string">"简体中文"</span>&gt;</span>简体中文<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">data-src</span>=<span class="string">"https://next.xuetangx.com/api/v1/lms/service/subtitle_parse/?c_d=FE72F5E8905B58BA9C33DC5901307461&amp;amp;lg=1"</span> <span class="attr">class</span>=<span class="string">"xt_video_caption_btn"</span> <span class="attr">keyt</span>=<span class="string">"English"</span>&gt;</span>English<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/17/Tool/下载学堂在线课程/" data-id="cka9nyx67000b1stzqdkp46n5" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Memorandum/离线文档查看" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/11/Memorandum/离线文档查看/" class="article-date">
+  <time datetime="2019-10-11T05:30:55.000Z" itemprop="datePublished">2019-10-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/备忘录/">备忘录</a>►<a class="article-category-link" href="/categories/备忘录/开发相关/">开发相关</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/11/Memorandum/离线文档查看/">离线文档</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Dash/Zeal<br><a href="https://zealdocs.org/" target="_blank" rel="noopener">download</a><br><a href="https://kapeli.com/dash" target="_blank" rel="noopener">doc</a><br><a href="http://zealusercontributions.herokuapp.com/" target="_blank" rel="noopener">third part doc</a>  </p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/11/Memorandum/离线文档查看/" data-id="cka9nyx5z00071stz03umh0cn" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dash/">Dash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Zeal/">Zeal</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/document/">document</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ue4_note/ue4_场景扫描特效" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/11/ue4_note/ue4_场景扫描特效/" class="article-date">
+  <time datetime="2019-10-11T05:30:55.000Z" itemprop="datePublished">2019-10-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/ue4/">ue4</a>►<a class="article-category-link" href="/categories/ue4/特效/">特效</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/10/11/ue4_note/ue4_场景扫描特效/">场景扫描特效</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>n1：用到了Stencil，设置物体的Stencil值将改变被扫描物体的颜色  </p>
+<ol>
+<li><p>创建一个PostProcessVPostProcessVolume（后加工）</p>
+</li>
+<li><p>创建材质蓝图M_ScanEffact，<br> 将Material Domain 更改为Post Process<br> 将Post Process Material 的 Blendable Location(可混合位置)更改为Before Tonemapping(调色前)</p>
+</li>
+<li><p>在蓝图里创建SphereMask（球面掩模）节点。 -》 给那个唯一亮着的<br> 获取Absolute World Position -》 A<br> 获取Camera Position -》 B<br> 添加Param（参数）命名为Radius -》 Radius<br> 添加Param 命名为Hardness -》 Hardness  </p>
+</li>
+<li><p>创建M_ScanEffact的材质球，将其添加到相机</p>
+</li>
+<li><p>将SphereMask节点的输出改道路过Sine<br> //这时Hardness决定环的宽，Radius决定</p>
+</li>
+<li><p>将Sine出来的转到Clamp （min max）</p>
+</li>
+<li><p>添加个Texture Sample（纹理采样）, 输出与Clamp的输出相乘，传给<br> //这是预览会非常奇怪</p>
+</li>
+<li><p>添加WorldAlignedTexture,输入7的Texture Sample{右键转换至Texture Object}<br> 添加Param 【Size】-》 Texture Size<br> -》 WorldPoistion</p>
+</li>
+<li><p>new ComponentMask 【Mask（R G）】<br> 8中的XYZ Texture 输入</p>
+</li>
+<li><p>9中的输出与7中Clamp 输出相乘<br>Size设置为100，//此时Radius 为921， Hardness为0.49</p>
+</li>
+<li><p>添加Scene Texture</p>
+<pre><code>将Umaterial Expression Scene Texture 中的Scene Texture Id 更改为WorldNormal
+Color 输出至8中的WorldAlignedTexture 的 World Space Normal</code></pre></li>
+<li><p>添加Lerp节点，将Mask与Clamp的乘积输出至此节点的Alpha</p>
+</li>
+<li><p>复制SceneTexture WorldNormal ， 将Scene Texture Id 设置为PostProcessInput</p>
+</li>
+<li><p>添加Compont Mask<br>13中的Color输出至此<br>输出至12的A</p>
+</li>
+<li><p>12的输出至E*** Color</p>
+</li>
+<li><p>添加Param[Scan Color]输出至12的Lerp的B<br>将Scan Color 设置为【22，2，0，0】</p>
+</li>
+</ol>
+<p>//告一段落</p>
+<ol start="17">
+<li><p>项目设置里搜索custom ste找到Postprocessing 的Custom Depth-Stencil Pass更改至Enable with Stencil</p>
+</li>
+<li><p>添加SceneTexture{同上设置为CustomStencil}<br>Color给E*** Color<br>//可以找几个物体将其Reddering 的Render CustomDepth设置为true<br>//可以找几个物体将其Reddering 的CustomDepth Stencil设置为1</p>
+</li>
+<li><p>创建BitMask，<br>0-》Bit（s）</p>
+</li>
+<li><p>BitMask的函数如下</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>.A=Input_BitMask(Scalar)</span><br><span class="line">Divide.A=Input_Bit(Scalar)</span><br><span class="line">Divide.B=<span class="number">255</span></span><br><span class="line"><span class="keyword">if</span>.B=Divide</span><br><span class="line"><span class="comment">//return A==B;</span></span><br><span class="line"><span class="keyword">if</span>(A==B)&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ol>
+<ol start="21">
+<li>添加一个Mask（R）， 一个Divide（，255）<br>18中的Color-》Mask（R） -》  Divide.A<br>Divide -&gt; 19.BitMask(s)<br>19.Result -&gt; E*** Color</li>
+</ol>
+<p>22 添加一个Lerp<br>    12.Lerp-&gt;this.Lerp.A<br>    19.Result -&gt; this.Lerp.Alpha<br>    this.Lerp -&gt; E*** Color</p>
+<ol start="23">
+<li><p>创建Param（Vec4）[H1]<br>this.H1-&gt;22.B<br>将H1设置为（2，0，0，0）进行预览</p>
+</li>
+<li><p>添加Lerp， 将22.Lerp-》this.Lerp.B<br>this.Lerp-&gt;E*** Color<br>14-&gt;this.Lerp.A</p>
+</li>
+</ol>
+<p>至此达到视频的18：23</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/10/11/ue4_note/ue4_场景扫描特效/" data-id="cka9nyx6d000e1stz2mwl4c5y" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C++</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ue4/">ue4</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/特效/">特效</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/蓝图/">蓝图</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Toy/zhihuishu-shuake" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/10/09/Toy/zhihuishu-shuake/" class="article-date">
   <time datetime="2019-10-09T11:54:17.000Z" itemprop="datePublished">2019-10-09</time>
 </a>
     
@@ -80,7 +459,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/09/zhihuishu-shuake/">智慧树刷课脚本</a>
+      <a class="article-title" href="/2019/10/09/Toy/zhihuishu-shuake/">智慧树刷课脚本</a>
     </h1>
   
 
@@ -88,12 +467,14 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>只切换流畅和1.5倍加速，不使用蓝色标记是为了避免‘有可能’的反制措施。<br>静音还是使用阅览器自带的功能。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">var ti = $(&quot;body&quot;); </span><br><span class="line">var video = $(&quot;.catalogue_ul1 li[id*=video-]&quot;); </span><br><span class="line">var i = 1; </span><br><span class="line">var v = 1; </span><br><span class="line">&lt;!-- video.css(&quot;color&quot;, &quot;blue&quot;); --&gt; </span><br><span class="line">console.log(&quot;已选取&quot; + video.length + &quot;个小节&quot;); </span><br><span class="line">setTimeout(function () </span><br><span class="line">&#123; </span><br><span class="line">    $(&apos;.speedTab15&apos;).click(); </span><br><span class="line">    $(&apos;.line1bq&apos;).click(); </span><br><span class="line">    console.log(&quot;已切换至流畅和1.5倍加速&quot;); </span><br><span class="line">&#125;, 3000); </span><br><span class="line"></span><br><span class="line">ti.on(&quot;DOMNodeInserted&quot;, </span><br><span class="line">    function (e) &#123; </span><br><span class="line">        if (e.target.textContent == &quot;关闭&quot;) &#123; </span><br><span class="line">            console.log(&quot;检测到第&quot; + i + &quot;个弹题窗口&quot;); </span><br><span class="line">            window.setTimeout(function () &#123; </span><br><span class="line">                document.getElementById(&quot;tmDialog_iframe&quot;).contentWindow.document.getElementsByClassName(&quot;answerOption&quot;)[0].getElementsByTagName(&quot;input&quot;)[0].click(); </span><br><span class="line">                $(&quot;.popbtn_cancel&quot;).click(); </span><br><span class="line">                console.log(&quot;已关闭&quot;); </span><br><span class="line">            &#125;, 3000); </span><br><span class="line">            </span><br><span class="line">            i++; </span><br><span class="line">        &#125; </span><br><span class="line">        else if (e.target.textContent == &quot;本节视频,累计观看时间『100%』&quot;) </span><br><span class="line">        &#123; </span><br><span class="line">            console.log(&quot;检测到视频观看完成，准备跳到下一节&quot;); </span><br><span class="line">            $(&apos;.next_lesson_bg&apos;).find(&apos;a&apos;).trigger(&apos;click&apos;); </span><br><span class="line">            console.log(&quot;已跳转&quot;); </span><br><span class="line">            setTimeout(function () &#123; </span><br><span class="line">                $(&apos;.speedTab15&apos;).click();</span><br><span class="line">                $(&apos;.line1bq&apos;).click(); </span><br><span class="line">                console.log(&quot;已切换至流畅和1.5倍加速&quot;); </span><br><span class="line">                &#125;</span><br><span class="line">                , 6000); </span><br><span class="line">            v++; </span><br><span class="line">            console.log(&quot;目前播放了&quot; + v + &quot;个视频&quot;); </span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+        <p>只切换流畅和1.5倍加速，不使用蓝色标记是为了避免‘有可能’的反制措施。<br>静音还是使用自己启动阅览器自带的静音功能比较好。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> ti = $(<span class="string">"body"</span>); </span><br><span class="line"><span class="keyword">var</span> video = $(<span class="string">".catalogue_ul1 li[id*=video-]"</span>); </span><br><span class="line"><span class="keyword">var</span> i = <span class="number">1</span>; </span><br><span class="line"><span class="keyword">var</span> v = <span class="number">1</span>;</span><br><span class="line">&lt;!-- You choice --&gt;</span><br><span class="line">&lt;!-- <span class="keyword">var</span> howManyYouWant = video.length; --&gt;</span><br><span class="line">&lt;!-- <span class="keyword">var</span> howManyYouWant = <span class="number">10</span>; --&gt;</span><br><span class="line"><span class="keyword">var</span> howManyYouWant = video.length;</span><br><span class="line"></span><br><span class="line">&lt;!-- video.css(<span class="string">"color"</span>, <span class="string">"blue"</span>); --&gt; </span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">"已选取"</span> + video.length + <span class="string">"个小节"</span>); </span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">    $(<span class="string">'.speedTab15'</span>).click(); </span><br><span class="line">    $(<span class="string">'.line1bq'</span>).click(); </span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"已切换至流畅和1.5倍加速"</span>); </span><br><span class="line">&#125;, <span class="number">3000</span>); </span><br><span class="line"></span><br><span class="line">ti.on(<span class="string">"DOMNodeInserted"</span>, </span><br><span class="line">    <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123; </span><br><span class="line">        <span class="keyword">if</span> (e.target.textContent == <span class="string">"关闭"</span>) &#123; </span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"检测到第"</span> + i + <span class="string">"个弹题窗口"</span>); </span><br><span class="line">            <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">                <span class="built_in">document</span>.getElementById(<span class="string">"tmDialog_iframe"</span>)</span><br><span class="line">                    .contentWindow.document</span><br><span class="line">                    .getElementsByClassName(<span class="string">"answerOption"</span>)[<span class="number">0</span>]</span><br><span class="line">                    .getElementsByTagName(<span class="string">"input"</span>)[<span class="number">0</span>]</span><br><span class="line">                    .click(); </span><br><span class="line">                $(<span class="string">".popbtn_cancel"</span>).click(); </span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">"已关闭"</span>); </span><br><span class="line">            &#125;, <span class="number">3000</span>); </span><br><span class="line">            i++; </span><br><span class="line">        &#125; </span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (e.target.textContent == <span class="string">"本节视频,累计观看时间『100%』"</span>) </span><br><span class="line">        &#123; </span><br><span class="line">            <span class="keyword">if</span> (v &gt; howManyYouWant)&#123;</span><br><span class="line">                </span><br><span class="line">                &lt;!-- nothing --&gt;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">"检测到视频观看完成，准备跳到下一节"</span>); </span><br><span class="line">                $(<span class="string">'.next_lesson_bg'</span>).find(<span class="string">'a'</span>).trigger(<span class="string">'click'</span>); </span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">"已跳转"</span>); </span><br><span class="line">                setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123; </span><br><span class="line">                    $(<span class="string">'.speedTab15'</span>).click();</span><br><span class="line">                    $(<span class="string">'.line1bq'</span>).click(); </span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">"已切换至流畅和1.5倍加速"</span>); </span><br><span class="line">                    &#125;</span><br><span class="line">                    , <span class="number">6000</span>); </span><br><span class="line">                v++; </span><br><span class="line">                <span class="built_in">console</span>.log(<span class="string">"目前播放了"</span> + v + <span class="string">"个视频"</span>); </span><br><span class="line">            &#125;</span><br><span class="line">        &#125; </span><br><span class="line">    &#125;</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/09/zhihuishu-shuake/" data-id="ck1j84mdg0006cotzpgz6bteh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/09/Toy/zhihuishu-shuake/" data-id="cka9nyx6a000c1stzofr3jwb8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/智慧树/">智慧树</a></li></ul>
@@ -105,9 +486,9 @@
 
 
   
-    <article id="post-Binary-Search" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Algorithm/Binary-Search" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/10/09/Binary-Search/" class="article-date">
+    <a href="/2019/10/09/Algorithm/Binary-Search/" class="article-date">
   <time datetime="2019-10-09T08:30:12.000Z" itemprop="datePublished">2019-10-09</time>
 </a>
     
@@ -119,7 +500,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2019/10/09/Binary-Search/">Binary Search</a>
+      <a class="article-title" href="/2019/10/09/Algorithm/Binary-Search/">Binary Search</a>
     </h1>
   
 
@@ -132,7 +513,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/09/Binary-Search/" data-id="ck1j84mcp0003cotztefgjaod" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/09/Algorithm/Binary-Search/" data-id="cka9nyx5a00031stzf4c3f46v" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
@@ -183,7 +564,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/10/09/hello-world/" data-id="ck1j84mc30000cotzrogmdzao" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/10/09/hello-world/" data-id="cka9nyx4n00011stzaidm6dmh" class="article-share-link">Share</a>
       
       
     </footer>
@@ -203,7 +584,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/让生活变得更美好/">让生活变得更美好</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/C/">C++</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/CXX20/">CXX20</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/C/Third/">Third</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/C/Third/entt/">entt</a></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/OpenGL/">OpenGL</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/OpenGL/图元/">图元</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/OpenGL/缓存（buffer）/">缓存（buffer）</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/ue4/">ue4</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/ue4/特效/">特效</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/备忘录/">备忘录</a><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/备忘录/开发相关/">开发相关</a></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/让生活变得更美好/">让生活变得更美好</a></li></ul>
     </div>
   </div>
 
@@ -213,7 +594,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智慧树/">智慧树</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Dash/">Dash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/OpenGL/">OpenGL</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Zeal/">Zeal</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/document/">document</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ue4/">ue4</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/智慧树/">智慧树</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/特效/">特效</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/蓝图/">蓝图</a></li></ul>
     </div>
   </div>
 
@@ -223,7 +604,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/智慧树/" style="font-size: 10px;">智慧树</a>
+      <a href="/tags/C/" style="font-size: 20px;">C++</a> <a href="/tags/Dash/" style="font-size: 10px;">Dash</a> <a href="/tags/OpenGL/" style="font-size: 20px;">OpenGL</a> <a href="/tags/Zeal/" style="font-size: 10px;">Zeal</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/document/" style="font-size: 10px;">document</a> <a href="/tags/ue4/" style="font-size: 10px;">ue4</a> <a href="/tags/智慧树/" style="font-size: 10px;">智慧树</a> <a href="/tags/特效/" style="font-size: 10px;">特效</a> <a href="/tags/蓝图/" style="font-size: 10px;">蓝图</a>
     </div>
   </div>
 
@@ -232,7 +613,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">May 2020</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/11/">November 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">October 2019</a></li></ul>
     </div>
   </div>
 
@@ -245,15 +626,23 @@
       <ul>
         
           <li>
-            <a href="/2019/10/09/zhihuishu-shuake/">智慧树刷课脚本</a>
+            <a href="/2020/05/05/OpenGL/缓存数据/">OpenGL缓存数据</a>
           </li>
         
           <li>
-            <a href="/2019/10/09/Binary-Search/">Binary Search</a>
+            <a href="/2020/05/05/OpenGL/图元/">OpenGL图元</a>
           </li>
         
           <li>
-            <a href="/2019/10/09/hello-world/">Hello World</a>
+            <a href="/2020/05/04/Code/C++/C20/新标准/">C20</a>
+          </li>
+        
+          <li>
+            <a href="/2019/11/23/Code/entt使用/">entt使用</a>
+          </li>
+        
+          <li>
+            <a href="/2019/10/17/Tool/下载学堂在线课程/">下载学堂在线课程</a>
           </li>
         
       </ul>
@@ -268,7 +657,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
+      &copy; 2020 Zwatch<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
