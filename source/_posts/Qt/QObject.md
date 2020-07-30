@@ -90,10 +90,24 @@ virtual void QObject::timerEvent(QTimerEvent *event)
 virtual const QMetaObject* metaObject() const
 ```
 
+```C++
+QVariant property(const char *name) const
+
+void setObjectName(const QString &name)
+
+bool 
+setProperty(const char *name, const QVariant &value)
+
+```
+
+
 #线程安全
 ```C++
 //thread safe: false
 void moveToThread(QThread *targetThread)
+
+QThread* thread() const
+
 ```
 对象会收到`QEvent::ThreadChange`事件，但在这是post的新事件会在新线程里处理。
 如果参数为nullptr，则该实例会停止一切事件循环。
@@ -102,7 +116,7 @@ void moveToThread(QThread *targetThread)
 ```C++
 bool isWidgetType() const
 bool isWindowType() const
-bool inherits(const char* className) const
+bool inherits(const char* className) const //该类是否继承自某些类，（自己也算继承自己）
 ```
 
 
