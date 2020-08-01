@@ -13,7 +13,7 @@ void terminate()
 ```C++
 enum QThread::Priority{	
     //Constant Value Description
-    
+
     IdlePriority = 0, //懒惰的，当没有其它线程在活动时调用此线程。
     LowestPriority = 1, //最低优先级
     LowPriority = 2, //低优先级
