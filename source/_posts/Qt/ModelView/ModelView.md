@@ -11,6 +11,7 @@ model提供数据接口，包括
 所有项目模型均基于QAbstractItemModel类。 
 此类定义一个接口，视图和委托使用该接口访问数据。 
 数据本身不必存储在模型中。 它可以保存在由单独的类，文件，数据库或某些其他应用程序组件提供的数据结构或存储库中。
+
 QAbstractItemModel提供了一个数据接口，该接口足够灵活，可以处理以表、列表和树的形式表示数据的视图。 
 但是，当为列表和类似表的数据结构实现新模型时，QAbstractListModel和QAbstractTableModel类是更好的起点，因为它们提供了常用功能的适当默认实现。 这些类中的每一个都可以被子类化以提供支持特殊类型的列表和表的模型。
 
@@ -19,6 +20,7 @@ QStringListModel is used to store a simple list of QString items.
 QStandardItemModel manages more complex tree structures of items, each of which can contain arbitrary data.
 QFileSystemModel provides information about files and directories in the local filing system.
 QSqlQueryModel, QSqlTableModel, and QSqlRelationalTableModel are used to access databases using model/view conventions.
+
 Qt提供了一些现成的模型，可用于处理数据项：
 QStringListModel 用于存储QString项目的简单列表。
 QStandardItemModel 管理更复杂的项目树结构，每个项目可以包含任意数据。
@@ -42,7 +44,8 @@ QAbstractItemDelegate是模型/视图框架中委托的抽象基类。 默认委
 ## Sorting
 
 排序方式依赖于您的模型。
-如果您的模型是可排序的，即重新实现QAbstractItemModel :: sort（）函数，则QTableView和QTreeView都提供了API，可让您以编程方式对模型数据进行排序。 另外，通过将QHeaderView :: sortIndicatorChanged（）信号连接到QTableView :: sortByColumn（）插槽或QTreeView :: sortByColumn（），可以启用交互式排序（即允许用户通过单击视图的标题对数据进行排序）。 ）插槽。
+
+如果您的模型是可排序的，即重新实现`QAbstractItemModel::sort()`函数，则QTableView和QTreeView都提供了API，可让您以编程方式对模型数据进行排序。 另外，通过将`QHeaderView::sortIndicatorChanged()`信号连接到`QTableView::sortByColumn()`插槽或`QTreeView::sortByColumn()`，可以启用交互式排序（即允许用户通过单击视图的标题对数据进行排序）。 ）插槽。
 
 如果您的模型没有所需的接口，或者如果您想使用列表视图来呈现数据，则另一种方法是在视图中呈现数据之前，使用代理模型来转换模型的结构。 有关代理模型的部分将对此进行详细介绍。
 
