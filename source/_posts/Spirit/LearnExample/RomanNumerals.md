@@ -193,16 +193,25 @@ A grammar encapsulates one or more rules. It has the same template parameters as
 
 语法封装了一个或多个规则。 它具有与规则相同的模板参数。 您通过以下方式声明语法：
 
-1. deriving a struct (or class) from the `grammar` class template从`grammar`类模板派生结构（或类）
-2. declare one or more rules as member variables声明一个或多个规则(rule)作为成员变量
-3. initialize the base grammar class by giving it the start rule (its the first rule that gets called when the grammar starts parsing) 通过给它一个开始规则来初始化基础语法类（它是语法开始解析时被调用的第一个规则）
-4. initialize your rules in your constructor 在构造函数中初始化规则
+1. deriving a struct (or class) from the `grammar` class template
+
+   从`grammar`类模板派生结构（或类）
+
+2. declare one or more rules as member variables
+
+   声明一个或多个规则(rule)作为成员变量
+
+3. initialize the base grammar class by giving it the start rule (its the first rule that gets called when the grammar starts parsing) 
+
+   通过给它一个开始规则来初始化基础语法类（它是语法开始解析时被调用的第一个规则）
+
+4. initialize your rules in your constructor 
+
+   在构造函数中初始化规则
 
 The roman numeral grammar is a very nice and simple example of a grammar:
 
 罗马数字语法是语法的一个非常好的简单示例：
-
-
 
 ```
 template <typename Iterator>
@@ -237,12 +246,32 @@ Things to take notice of:
 注意事项：
 
 - The grammar and start rule signature is `unsigned()`. It has a synthesized attribute (return value) of type `unsigned` with no inherited attributes (arguments).语法和开始规则签名为`unsigned（）`。 它具有类型为unsigned的综合属性（返回值），没有继承的属性（自变量）。
+
 - We did not specify a skip-parser. We don't want to skip in between the numerals.我们没有指定跳过解析器。 我们不想在数字之间跳过。
-- `roman::base_type` is a typedef for `grammar<Iterator, unsigned()>`. If `roman` was not a template, you could simply write: base_type(start) ``roman :: base_type''是grammar <Iterator，unsigned（）>的类型定义。 如果`roman`是不是一个模板，你可以简单地写：base_type（start）
+
+- `roman::base_type` is a typedef for `grammar<Iterator, unsigned()>`. If `roman` was not a template, you could simply write: `base_type(start) `
+
+  `roman :: base_type`是`grammar <Iterator, unsigned（）>`的类型定义。 如果`roman`是不是一个模板，你可以简单地写：`base_type（start）`
+
 - It's best to make your grammar templates such that they can be reused for different iterator types.
+
+  最好使您的语法模板，以便它们可以为不同的迭代器类型重用。
+
 - `_val` is another [Boost.Phoenix](https://www.boost.org/doc/libs/1_73_0/libs/phoenix/doc/html/index.html) placeholder representing the rule's synthesized attribute.
-- `eps` is a special spirit parser that consumes no input but is always successful. We use it to initialize `_val`, the rule's synthesized attribute, to zero before anything else. The actual parser starts at `+lit('M')`, parsing roman thousands. Using `eps` this way is good for doing pre and post initializations.
+
+  _val是另一个[Boost.Phoenix]占位符，代表规则的综合属性。
+
+- `eps` is a special spirit parser that consumes no input but is always successful. 
+
+  eps是一种特殊的spirit parser，它不消耗任何输入但总是成功的。
+
+  We use it to initialize `_val`, the rule's synthesized attribute, to zero before anything else. The actual parser starts at `+lit('M')`, parsing roman thousands. Using `eps` this way is good for doing pre and post initializations.
+
+  我们使用它来将规则的综合属性_val初始化为零。 实际的解析器从`+ lit（'M'）`开始，解析成千上万的罗马字母。 以这种方式使用`eps'可以进行初始化之前和之后的初始化。
+
 - The expression `a || b` reads: match a or b and in sequence. That is, if both `a` and `b` match, it must be in sequence; this is equivalent to `a >> -b | b`, but more efficient.
+
+  表达式`a || b`读取：依次匹配a或b。 也就是说，如果“ a”和“ b”都匹配，则必须按顺序进行； 这等效于`a >> -b | b`，但效率更高。
 
 ###### [Let's Parse!](https://www.boost.org/doc/libs/1_73_0/libs/spirit/doc/html/spirit/qi/tutorials/roman_numerals.html#spirit.qi.tutorials.roman_numerals.let_s_parse_)
 
@@ -271,6 +300,8 @@ else
 
 
 `roman_parser` is an object of type `roman`, our roman numeral parser. This time around we are using the no-skipping version of the parse functions. We do not want to skip any spaces! We are also passing in an attribute, `unsigned result`, which will receive the parsed value.
+
+roman_parser是我们的罗马数字解析器roman类型的对象。 这次，我们使用解析函数的无跳过版本。 我们不想跳过任何空格！ 我们还传入了一个“无符号结果”属性，该属性将接收解析后的值。
 
 The full cpp file for this example can be found here: [../../example/qi/roman.cpp](https://www.boost.org/doc/libs/1_73_0/libs/spirit/example/qi/roman.cpp)
 
