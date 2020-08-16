@@ -1,6 +1,6 @@
 ---
-title: 智慧树刷课脚本[已失效]
-date: 2019-10-09 19:54:17
+title: 智慧树刷课脚本[新]
+date: 2020-05-25 17:24:27
 updated:
 tags:
    - 智慧树
@@ -9,9 +9,8 @@ categories:
 ---
 
 
+因为智慧树升级了，有部分代码不能用了，而且想尝试破解一下反作弊系统
 
-只切换流畅和1.5倍加速，不使用蓝色标记是为了避免‘有可能’的反制措施。
-静音还是使用自己启动阅览器自带的静音功能比较好。
 
 ```js
 var ti = $("body"); 
@@ -31,6 +30,12 @@ setTimeout(function ()
     $('.line1bq').click(); 
     console.log("已切换至流畅和1.5倍加速"); 
 }, 3000); 
+
+StartVideo(){
+
+
+}
+
 
 ti.on("DOMNodeInserted", 
     function (e) { 
@@ -69,5 +74,3 @@ ti.on("DOMNodeInserted",
     }
 );
 ```
-
-
