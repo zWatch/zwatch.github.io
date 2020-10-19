@@ -1,0 +1,2 @@
+Dialog调用open时会调用子Dialog的open，Dialog调用setparent时会重置windowsflags
+
