@@ -2,12 +2,12 @@ from [think-async.com](https://think-async.com/Asio/asio-1.18.0/doc/asio/overvie
 
 # [Overview](#.)
 
-- [Rationale](./Rationale.md)
-- [Core Concepts and Functionality](core/index.md)
-  - [Basic Asio Anatomy](core/basics.md)
-  - [The Proactor Design Pattern: Concurrency Without Threads](core/async.md)
-  - [Threads and Asio](core/threads.md)
-  - [Strands: Use Threads Without Explicit Locking](core/strands.md)
+- [Rationale 基本原理](./Rationale.md)
+- [Core Concepts and Functionality 核心概念和功能](core/index.md)
+  - [Basic Asio Anatomy 基本的Asio解剖](core/basics.md)
+  - [The Proactor Design Pattern: Concurrency Without Threads Proactor设计模式：没有线程的并发](core/async.md)
+  - [Threads and Asio 线程和Asio](core/threads.md)
+  - [Strands: Use Threads Without Explicit Locking 股线：使用没有显式锁定的线程](core/strands.md)
   - [Buffers](core/buffers.md)
   - [Streams, Short Reads and Short Writes](core/streams.md)
   - [Reactor-Style Operations](core/reactor.md)
