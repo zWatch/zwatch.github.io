@@ -768,6 +768,9 @@ A line along which measurements are made in order to determine the coordinates o
 
 azimuth
 The horizontal angle, measured in degrees, between a baseline drawn from a center point and another line drawn from the same point. Normally, the baseline points true north and the angle is measured clockwise from the baseline.
+从中心点绘制的基线与从同一点绘制的另一条线之间的水平角度，以度为单位。 通常，基线指向真北，并且角度是从基线顺时针测量的。
 
 azimuthal projection
 A map projection that transforms points from a spheroid or sphere onto a tangent or secant plane. The azimuthal projection is also known as a planar or zenithal projection.
+地图投影，可将球体或球体上的点转换为切线或割线平面。 方位角投影也称为平面投影或天顶投影。
+
